@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691269262146",
+    "project_id": "bloodline-737e0",
+    "storage_bucket": "bloodline-737e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691269262146:android:c1f46bcfb08322e01386db",
+        "android_client_info": {
+          "package_name": "com.bloodline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691269262146-mr4gnp86tls996q9kkdls1emnc2fvncn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzbiM-p9296-zZclJ3eOZmcC31C9rJDu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691269262146-mr4gnp86tls996q9kkdls1emnc2fvncn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
