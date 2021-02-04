@@ -106,7 +106,17 @@ const RegisterDialog = props => {
     const [passwords, setPasswords] = useState({ visibility: true })
     const [loading, setLoading] = useState(false)
 
-    const handleChange = (type, value) => setUserInfo({ ...userInfo, [type]: value })
+    const handleChange = (type, value) => {
+        setUserInfo({ ...userInfo, [type]: value })
+        if (!userInfo.Donor) {
+            delete userInfo.Phone
+            delete userInfo.Gender
+            delete userInfo.Age
+            delete userInfo.Weight
+            delete userInfo.City
+            delete userInfo.Blood
+        }
+    }
 
     const handleSignup = () => {
         if (userInfo.FullName && userInfo.Email && passwords.password && passwords.cPassword) {

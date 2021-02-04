@@ -17,7 +17,7 @@ import BootstrapStyleSheet from 'react-native-bootstrap-styles';
 const bootstrapStyleSheet = new BootstrapStyleSheet();
 const { s, c } = bootstrapStyleSheet;
 
-const Login = props => {
+const Login = ({ navigation }) => {
     const [loginDialogVisibility, setLoginDialogVisibility] = useState(false)
     const [registerDialogVisibility, setRegisterDialogVisibility] = useState(false)
 
@@ -28,13 +28,14 @@ const Login = props => {
     const isSignedIn = () => {
         auth().onAuthStateChanged(
             user => {
-                if (user) props.navigation.navigate('Dashboard')
-                else console.log('not signed in')
+                if (user) navigation.navigate('Dashboard')
             }
         )
     }
 
-    useEffect(() => isSignedIn(), [])
+    useEffect(() => {
+        isSignedIn()
+    }, [])
     return (
         <>
             <LoginDialog visible={loginDialogVisibility} closeDialog={closeDialog} />

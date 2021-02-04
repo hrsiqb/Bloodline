@@ -9,8 +9,17 @@ const registerUser = (res, rej, data) => {
         .then(user => {
             database()
                 .ref(`/Users/${user.user.uid}/`)
-                .set({...data.userInfo, uId: user.user.uid})
-                .then(() => res());
+                .set({ ...data.userInfo, uId: user.user.uid })
+                .then(() => {
+                    if (data.userInfo.Donor) {
+                        database()
+                            .ref(`/Donors/${user.user.uid}/`)
+                            .set({ uId: user.user.uid })
+                            .then(() => res())
+                            .catch(() => rej())
+                    }
+                    else res()
+                });
         }
         )
         .catch(error => {
@@ -46,4 +55,49 @@ const loginUser = (res, rej, data) => {
         })
 }
 
-export { registerUser, loginUser }
+const signOut = () => {
+    auth()
+        .signOut()
+        .then(() => console.log('User signed out!'));
+}
+
+const getUserInfo = (res, rej, uid) => {
+    database()
+        .ref(`/Users/${uid}/`)
+        .once("value")
+        .then(data => res(data.val()))
+        .catch(error => rej(error))
+}
+
+const updateUserInfo = (res, rej, data) => {
+    database()
+        .ref(`/Users/${data.uId}/`)
+        .set({ ...data })
+        .then(() => {
+            if (data.Donor) {
+                database()
+                    .ref(`/Donors/${data.uId}/`)
+                    .set({ uId: data.uId })
+                    .then(() => res())
+                    .catch(() => rej())
+            }
+            else {
+                database()
+                    .ref(`/Donors/${data.uId}/`)
+                    .remove()
+                    .then(() => res())
+                    .catch(() => rej())
+            }
+        })
+        .catch(() => rej())
+}
+
+const getAllDonors = (res, rej) => {
+    database()
+        .ref(`/Donors/`)
+        .once("value")
+        .then(data => res(data.val()))
+        .catch(error => rej(error))
+}
+
+export { registerUser, loginUser, signOut, getUserInfo, updateUserInfo, getAllDonors }

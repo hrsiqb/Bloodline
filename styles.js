@@ -38,6 +38,7 @@ const ms = StyleSheet.create({
   bc_blk_5: {backgroundColor: 'rgba(0,0,0,0.5)'},
 
   bw_1: { borderWidth: 1 },
+  bw_2: { borderWidth: 2 },
 
   bbw_0: { borderBottomWidth: 0 },
   bbw_1: { borderBottomWidth: 1 },
@@ -47,11 +48,13 @@ const ms = StyleSheet.create({
   bd_c_w: { borderColor: 'white' },
   bd_c_blu: { borderColor: 'blue' },
   bd_c_red: { borderColor: 'red' },
+  bd_c_mrn: { borderColor: 'maroon' },
 
   ta_c: { textAlign: 'center' },
 
   ai_c: { alignItems: 'center' },
   ai_fs: { alignItems: 'flex-start' },
+  ai_bl: { alignItems: 'baseline' },
 
   jc_c: { justifyContent: 'center' },
   jc_sb: { justifyContent: 'space-between' },
@@ -74,6 +77,7 @@ const ms = StyleSheet.create({
   w_112: { width: '112%' },
   w_111_5: { width: '111.5%' },
   w_100: { width: '100%' },
+  w_90: { width: '90%' },
   w_85: { width: '85%' },
   w_80: { width: '80%' },
   w_70: { width: '70%' },
@@ -90,6 +94,8 @@ const ms = StyleSheet.create({
   w_65p: { width: 65 },
   w_80p: { width: 80 },
   w_85p: { width: 85 },
+  w_90p: { width: 90 },
+  w_95p: { width: 95 },
   w_100p: { width: 100 },
   w_120p: { width: 120 },
   w_200p: { width: 200 },
@@ -110,6 +116,7 @@ const ms = StyleSheet.create({
   h_65p: { height: 65 },
   h_70p: { height: 70 },
   h_100p: { height: 100 },
+  h_110p: { height: 110 },
 
   pos_ab: { position: 'absolute' },
 
