@@ -65,7 +65,7 @@ const Dashboard = ({ navigation }) => {
                     </View>
                 </View>
             }
-            <ScrollView contentContainerStyle={[ms.ai_c, ms.bc_mrn]}>{usersData}{usersData}</ScrollView>
+            <ScrollView contentContainerStyle={[ms.ai_c, ms.bc_mrn]}>{usersData}</ScrollView>
             <TouchableNativeFeedback onPress={() => navigation.navigate("Menu")}>
                 <View style={[ms.w_65p, ms.h_65p, ms.jc_c, ms.ai_c, ms.bc_red, ms.bRad_50,
                 ms.pos_ab, ms.bot_20, ms.rit_15, ms.bw_2, ms.bd_c_mrn]}>
