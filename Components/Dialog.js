@@ -26,10 +26,7 @@ const { s, c } = bootstrapStyleSheet;
 
 
 const LoginDialog = props => {
-    const [userInfo, setUserInfo] = useState({
-        Email: 'haris@gmail.com',
-        passwordVisibility: true
-    })
+    const [userInfo, setUserInfo] = useState({})
     const [loading, setLoading] = useState(false)
 
     const handleChange = (type, value) => setUserInfo({ ...userInfo, [type]: value })
@@ -92,12 +89,6 @@ const LoginDialog = props => {
 
 const RegisterDialog = props => {
     const [userInfo, setUserInfo] = useState({
-        FullName: "Haris Iqbal",
-        Email: 'haris@gmail.com',
-        Phone: '03105660525',
-        Age: "26",
-        Weight: "72",
-        City: "Rawalpindi",
         Donor: true,
         Gender: "male",
         Blood: "A+"
