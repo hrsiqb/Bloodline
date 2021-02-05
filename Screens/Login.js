@@ -28,7 +28,10 @@ const Login = ({ navigation }) => {
     const isSignedIn = () => {
         auth().onAuthStateChanged(
             user => {
-                if (user) navigation.navigate('Dashboard')
+                if (user) {
+                    closeDialog()
+                    navigation.navigate('Dashboard')
+                }
             }
         )
     }

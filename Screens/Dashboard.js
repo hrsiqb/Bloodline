@@ -30,16 +30,18 @@ const Dashboard = ({ navigation }) => {
 
     useEffect(() => {
         var datas = []
-        var len = 0
+        var totalDonors = 0
+        var loadedDonors = 0
         setLoading(true)
         new Promise((res, rej) => getAllDonors(res, rej))
             .then(donors => {
+                totalDonors = Object.keys(donors).length
                 Object.keys(donors).map((uId, key) => {
                     new Promise((res, rej) => getUserInfo(res, rej, uId))
                         .then(data => {
-                            len++
+                            loadedDonors++
                             datas.push(<UserCard navigation={navigation} key={uId} userInfo={data} />)
-                            if (len === 3) {
+                            if (loadedDonors === totalDonors) {
                                 setUsersData(datas)
                                 setLoading(false)
                             }

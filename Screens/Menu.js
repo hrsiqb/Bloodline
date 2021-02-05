@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCalendarAlt, faPhoneAlt, faCity, faWeight, faTransgender } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faPhoneAlt, faCity, faWeight, faTransgender, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Item, Input, Switch, Picker } from 'native-base';
 import ms from '../styles'
 import BootstrapStyleSheet from 'react-native-bootstrap-styles';
@@ -85,7 +85,8 @@ const Menu = ({ navigation }) => {
                 </View>
             }
             <ScrollView>
-                <Text style={[ms.ta_c, ms.fw_b, ms.fs_25, ms.fc_w, ms.bbw_1, ms.bd_c_red, ms.w_200p, ms.as_c, s.pb1]}>Donation Info</Text>
+                <Text style={[ms.ta_c, ms.fw_b, ms.fs_25, ms.fc_w, ms.bbw_2, ms.bd_c_red, ms.w_100, ms.as_c, s.pb3, s.mt3, s.mb3]}>{userInfo.FullName}</Text>
+                <Text style={[ms.ta_c, ms.fw_b, ms.fs_25, ms.fc_w, ms.bbw_2, ms.bd_c_red, ms.w_200p, ms.as_c, s.pb1]}>Donation Info</Text>
                 <View style={[ms.fd_r, ms.ai_c, ms.bd_c_red, ms.h_70p, ms.bbw_1, ms.jc_sb, s.p3]}>
                     <Text style={[ms.fs_25, ms.fc_w, s.pb1]}>Donor</Text>
                     <Switch value={userInfo.Donor} trackColor={{ false: "#767577", true: "red" }} thumbColor={"#f4f3f4"} onValueChange={value => handleChange("Donor", value)} />
@@ -149,14 +150,14 @@ const Menu = ({ navigation }) => {
                         </Item>
                     </>
                 }
-                <View style={[, ms.bd_c_red, ms.bbw_2]}>
+                <View style={[ms.bd_c_red, ms.bbw_2]}>
                     <TouchableNativeFeedback onPress={() => handleUserUpdate()}>
                         <View style={[s.m3, s.p3, ms.bc_red, ms.bRad_10, ms.w_85p, ms.as_c]}>
                             <Text style={[ms.fc_w, ms.fs_17, ms.ta_c]}>Save</Text>
                         </View>
                     </TouchableNativeFeedback>
                 </View>
-                <Text style={[ms.ta_c, ms.fw_b, ms.fs_25, ms.fc_w, ms.bbw_1, ms.bd_c_red, ms.w_200p, ms.as_c, s.mb3, s.mt3]}>My Account</Text>
+                <Text style={[ms.ta_c, ms.fw_b, ms.fs_25, ms.fc_w, ms.bbw_2, ms.bd_c_red, ms.w_200p, ms.as_c, s.pb2, s.mb3, s.mt3]}>My Account</Text>
                 <TouchableNativeFeedback onPress={() => signOut()}>
                     <View style={[s.m3, s.p3, ms.bc_red, ms.bRad_10, ms.w_100p, ms.as_c]}>
                         <Text style={[ms.fc_w, ms.fs_17, ms.ta_c]}>Sign Out</Text>
